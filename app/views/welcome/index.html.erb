@@ -2,27 +2,35 @@
 <html>
 <head>
 <style>
-      h4 {
-    background-color: #0029A3; color: #FFF;
+section {
+    width:50%;
+    float:left;
+    padding:30px;    
 }
-    </style><%=image_tag("cblogo.jpg", alt: "CB Logo")%>
-  <div><h4><style>
-      {
-        padding-left: 40px;  
-      }
-    </style>next Mock Interview Day:  September 15, 2015</h4></div>
-  <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Day")%>
-  <%=image_tag("mockphotos.jpg", alt: "CareerBuilder Mock Interview Day")%>
+aside {
+    width:50%;
+    float:right;
+    padding:30px;    
+}
+footer {
+    background-color:#1F1F99;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;     
+}
+   img { width:100%; }
+    </style>
+  <div>
+    <div id="header">
+<h4>Next Mock Interview Day:  September 15, 2015</h4>
+</div>
+  <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Day", width: 1300, height: 200)%>
+  <%=image_tag("mockphotos.jpg", alt: "CareerBuilder Mock Interview Day", width: 1300, height: 200)%>
 <body>
-
-<BR>
-<BR>
-<BR>
-
-<p class="lead"> Careerbuilder Mock Interview Day will be held on:</p>
-<strong>Saturday, May 21, 2015 from 9 am to 1 pm.</strong>
-<BR>
-  <BR>
+<section>
+<h4>CareerBuilder Mock Interview Day will be held on:</h4>
+<strong><font color=#0029A3>Saturday, May 21, 2015 from 9 am to 1 pm.</font></strong></p>
 <address>
   <strong>Location</strong><br>
   CareerBuilder
@@ -30,11 +38,11 @@
   Norcross, GA 30092<br>
 </address>
 
-<address>
-  <strong>Email</strong><br>
-  <a href="mailto:#">allison.fabella@careerbuilder.com</a>
-</address>
+<p>Cost: <strong>FREE</strong></p>
 
+<p><button type="button" class="btn btn-warning">Schedule a Mock Interview</button></p>
+
+<br>
 
 <p>This free service is open to anyone looking to sharpen
 their interviewing skills. Employees of careerbuilder
@@ -43,4 +51,44 @@ Each mock interview will take 15 minutes and
 each participant is allowed two interviews. Space is
 limited to the first 100 participants. Sign up and
 upload your resume on the right:</p>
+
+<p>This free service is open to anyone looking to sharpen
+their interviewing skills. Employees of careerbuilder
+will conduct mock interviews and provide helpful feedback.
+Each mock interview will take 15 minutes and
+each participant is allowed two interviews. Space is
+limited to the first 100 participants. Sign up and
+upload your resume on the right:</p>
+
+<address>
+  <strong>For More Information Email</strong><br>
+  <a href="mailto:#">allison.fabella@careerbuilder.com</a>
+</address>
+</section>
+
+<aside>
+    <h4>About CareerBuilder</h4>
+<p>CareerBuilder is a great place to work. Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+
+<p>This free service is open to anyone looking to sharpen
+their interviewing skills. Employees of careerbuilder
+will conduct mock interviews and provide helpful feedback.
+Each mock interview will take 15 minutes and
+each participant is allowed two interviews. Space is
+limited to the first 100 participants.</p>
+
+<p>This free service is open to anyone looking to sharpen
+their interviewing skills. Employees of careerbuilder
+will conduct mock interviews and provide helpful feedback.
+Each mock interview will take 15 minutes and
+each participant is allowed two interviews. Space is
+limited to the first 100 participants. Sign up and
+upload your resume on the right:</p>
+</aside>
+
+<footer>
+Presented by CareerBuilder.com
+</footer>
 </body>
+
+

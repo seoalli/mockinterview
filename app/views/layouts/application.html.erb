@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
+<style>
+#header {
+    background-color:#0029A3;
+    color:white;
+    text-align:left;
+    padding:10px;
+}
+</style>
 <head>
-  <div class="btn-group pull-right" role="group" aria-label="..."> 
-  <button type="button" class="btn btn-default">Home</button>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="cblogo.jpg">
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="btn-group pull-right" role="group"> 
   <button type="button" class="btn btn-default">Register</button>
+  <button type="button" class="btn btn-default">About</button>
 </div>
-  <title>CareerBuilder Mock Interview Day</title>
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <style>
@@ -20,6 +36,7 @@
   <%= csrf_meta_tags %>
 
 </head>
+
 <body>
 <%= yield %>
 </body>

@@ -159,18 +159,18 @@
 }
 .btn-warning:hover,
 .btn-warning:focus {
-  background-color: #eb9316;
+  background-color: #E65C00;
   background-position: 0 -15px;
 }
 .btn-warning:active,
 .btn-warning.active {
-  background-color: #eb9316;
+  background-color: #E65C00;
   border-color: #e38d13;
 }
 .btn-warning.disabled,
 .btn-warning:disabled,
 .btn-warning[disabled] {
-  background-color: #eb9316;
+  background-color: #E65C00;
   background-image: none;
 }
 .btn-danger {
