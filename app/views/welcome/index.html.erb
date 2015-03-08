@@ -3,14 +3,20 @@
 <head>
 <style>
 section {
-    width:50%;
+    width:60%;
     float:left;
-    padding:30px;    
+    padding:30px;   
+    font-size: 20px 
+}
+button {
+   background-color: #FF3300;   
+   color:white;
 }
 aside {
-    width:50%;
+    width:40%;
     float:right;
-    padding:30px;    
+    padding:30px; 
+    font-size: 20px   
 }
 footer {
     background-color:#1F1F99;
@@ -29,8 +35,13 @@ footer {
   <%=image_tag("mockphotos.jpg", alt: "CareerBuilder Mock Interview Day", width: 1300, height: 200)%>
 <body>
 <section>
-<h4>CareerBuilder Mock Interview Day will be held on:</h4>
+<h3>CareerBuilder Mock Interview Day will be held on:</h3>
+
+<br>
+
 <strong><font color=#0029A3>Saturday, May 21, 2015 from 9 am to 1 pm.</font></strong></p>
+
+<br>
 <address>
   <strong>Location</strong><br>
   CareerBuilder
@@ -40,7 +51,9 @@ footer {
 
 <p>Cost: <strong>FREE</strong></p>
 
-<p><button type="button" class="btn btn-warning">Schedule a Mock Interview</button></p>
+<br>
+<p><button type="button">Schedule a Mock Interview</button>
+</p>
 
 <br>
 
@@ -60,6 +73,8 @@ each participant is allowed two interviews. Space is
 limited to the first 100 participants. Sign up and
 upload your resume on the right:</p>
 
+<br>
+<br>
 <address>
   <strong>For More Information Email</strong><br>
   <a href="mailto:#">allison.fabella@careerbuilder.com</a>
@@ -67,16 +82,19 @@ upload your resume on the right:</p>
 </section>
 
 <aside>
-    <h4>About CareerBuilder</h4>
-<p>CareerBuilder is a great place to work. Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-
+  <div style="background-color:#FFFFCC; color:black; padding:20px;">
+    <h3>About CareerBuilder</h3>
+<br>
+<p>CareerBuilder has the largest online job site in the U.S., but we're more than just a job board. We
+are the global leader in human capital solutions. Through constant innovation, unparalleled technology, and customer care delivered at every touch point, CareerBuilder helps match the right talent with the right opportunity more often than any other site.</p>
+<br>
 <p>This free service is open to anyone looking to sharpen
 their interviewing skills. Employees of careerbuilder
 will conduct mock interviews and provide helpful feedback.
 Each mock interview will take 15 minutes and
 each participant is allowed two interviews. Space is
 limited to the first 100 participants.</p>
-
+<br>
 <p>This free service is open to anyone looking to sharpen
 their interviewing skills. Employees of careerbuilder
 will conduct mock interviews and provide helpful feedback.
@@ -84,11 +102,9 @@ Each mock interview will take 15 minutes and
 each participant is allowed two interviews. Space is
 limited to the first 100 participants. Sign up and
 upload your resume on the right:</p>
+</div>
 </aside>
 
-<footer>
-Presented by CareerBuilder.com
-</footer>
 </body>
 
 
