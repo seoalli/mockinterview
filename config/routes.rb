@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'register' => 'welcome#register'
   get 'welcome/about'
   get 'about' => 'welcome#about'
+  get 'welcome/schedule'
+  get 'schedule' => 'welcome#schedule'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
