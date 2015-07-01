@@ -1,0 +1,128 @@
+$(document).ready(function(){
+    $('.Status').mouseenter(function(){
+        $('.Status').css('cursor', 'pointer' );
+    });
+    $(".Status").click(function() {
+        $("#bookedc").val($(this).index());
+        $("#bookedr").val($(this).parent().index());
+        if ($(this).text()=="Booked"){
+            alert("This slot is already Booked");
+        }
+        else {
+            div_show();
+        }
+
+    });
+
+    var xcell;
+    var xcolumn;
+    var time;
+    var department;
+    var blocked = "Blocked";
+    var available= "Available";
+    var compdepartment;
+
+
+    $('#cmdsend').click(function(event){
+
+        xcell =   $("#bookedc").val();
+        xcolumn = $("#bookedr").val();
+        time = $('#scheduler tr:eq(0) td:eq('+xcell+')').text();
+        department = $('#scheduler tr:eq('+xcolumn+') td:eq(0)').text();
+        blocked = "Blocked";
+        available= "Available";
+        //compdepartment;*/
+        //var rowindex = $("#bookedr").val($(this).parent().index());
+
+        alert("value of name "+ $('#first_Name').val() + " val of last name " + $('#last_Name').val() + " value of row "
+        + xcolumn );
+
+        if (document.getElementById('first_Name').value == "" || document.getElementById('last_Name').value == "" ||
+            document.getElementById('email').value == "" || document.getElementById('phoneNumber').value == "" ||
+            document.getElementById('message').value == "") {
+            alert("You Must Fill All Fields !");
+            event.preventDefault();
+
+        } else {
+
+            var ans = confirm( "Hello " + $("#first_Name").val() + ", you have set a mock interview with " +
+            department + " at "+ time + '\n\n' + " Is this your correct choice?" );
+
+            if (ans == true){
+                //$('#scheduler tr:eq('+xcolumn+') td:eq('+xcell+')').css('background-color','#FF0000');
+                //$('#scheduler tr:eq('+xcolumn+') td:eq('+xcell+')').html('Booked');
+
+                $('#interviewstatus').val(blocked);
+                $('#interviewField').val(department);
+                $('#interviewTime').val(time);
+                $('#interviewID_id').val(xcolumn);
+                $('#interview_id').val(xcolumn);
+
+                updateInterSlot( time);
+
+                alert ("your interview is confirmed!");
+                //alert ("this block is now: "+ $('#interviewstatus').val());
+               // alert ("value of interview time " + time +" "+" the value of interview field: " + department+ " "+$('#interviewTime').val()  );
+            }else{
+                alert( "You have cancelled your interview!");
+                $('input[type=text], textarea ').each(function(){
+                 $(this).val('');
+                });
+               $("#interviewstatus").val(available);
+                event.preventDefault();
+
+            }
+            $('#abc').hide();
+           // $('input[type=text], textarea').each(function(){
+             //   $(this).val('');
+            //});
+        }
+
+
+    });
+
+});
+
+
+//Function To Display Popup
+function div_show() {
+   document.getElementById('abc').style.display = "block";
+}
+//Function to Hide Popup
+function div_hide() {
+    document.getElementById('abc').style.display = "none";
+}
+//Function To update interview_slot
+function updateInterSlot( time){
+        switch(time){
+            case "9:00 AM":
+                $('#nineAM').val("Booked");
+                break;
+            case "9:30 AM":
+                $('#nine30AM').val("Booked");
+                break;
+            case "10:00 AM":
+                $('#tenAM').val("Booked");
+                break;
+            case "10:30 AM":
+                $('#ten30AM').val("Booked");
+                break;
+            case "11:00 AM":
+                $('#elevenAM').val("Booked");
+                break;
+            case "11:30 AM":
+                $('#eleven30AM').val("Booked");
+                break;
+            case "12:00 Noon":
+                $('#NOON').val("Booked");
+                break;
+            case "12:30 PM":
+                $('#twelve30PM').val("Booked");
+                break;
+            case "1:00 PM":
+                $('#onePM').val("Booked");
+                break;
+
+        }
+
+}

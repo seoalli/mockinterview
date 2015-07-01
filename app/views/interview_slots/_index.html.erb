@@ -1,0 +1,78 @@
+
+<table id="scheduler">
+  <tr class="tableheader">
+    <td style="text-align: left">Job Opening Type </td>
+    <td>9:00 AM</td>
+    <td>9:30 AM</td>
+    <td>10:00 AM</td>
+    <td>10:30 AM</td>
+    <td>11:00 AM</td>
+    <td>11:30 AM</td>
+    <td>12:00 Noon</td>
+    <td>12:30 PM</td>
+    <td>1:00 PM</td>
+  </tr>
+  <% @interview_slots = InterviewSlot.all %>
+  <% @interview_slots.each  do |slot| %>
+      <tr>
+        <td class="JobCategory"> <%= slot.jobType  %> </td>
+
+        <% if slot.nineAM == 'Booked' %>
+            <td class="blocked"> <%= slot.nineAM  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.nineAM  %> </td>
+        <% end %>
+
+        <% if slot.nine30AM == 'Booked' %>
+            <td class="blocked"> <%= slot.nine30AM  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.nine30AM  %> </td>
+        <% end %>
+
+        <% if slot.tenAM == 'Booked' %>
+            <td class="blocked"> <%= slot.tenAM  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.tenAM  %> </td>
+        <% end %>
+
+        <% if slot.ten30AM == 'Booked' %>
+            <td class="blocked"> <%= slot.ten30AM  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.ten30AM  %> </td>
+        <% end %>
+
+        <% if slot.elevenAM == 'Booked' %>
+            <td class="blocked"> <%= slot.elevenAM  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.elevenAM  %> </td>
+        <% end %>
+
+        <% if slot.eleven30AM == 'Booked' %>
+            <td class="blocked"> <%= slot.eleven30AM  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.eleven30AM  %> </td>
+        <% end %>
+
+        <% if slot.NOON  == 'Booked' %>
+            <td class="blocked"> <%= slot.NOON  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.NOON  %> </td>
+        <% end %>
+
+        <% if slot.twelve30PM == 'Booked' %>
+            <td class="blocked"> <%= slot.twelve30PM  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.twelve30PM  %> </td>
+        <% end %>
+
+        <% if slot.onePM == 'Booked' %>
+            <td class="blocked"> <%= slot.onePM  %> </td>
+        <% else %>
+            <td class="Status"> <%= slot.onePM  %> </td>
+        <% end %>
+
+
+      </tr>
+  <% end %>
+
+</table>

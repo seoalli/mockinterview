@@ -1,0 +1,88 @@
+<!--<script type='text/javascript' src="form.js.erb"></script>-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!html>
+
+<div>
+  <div id="header">
+    <h4>Next Mock Interview Day:  September 15, 2015</h4>
+  </div>
+  <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Daya", class:"respimg")%>
+</div>
+<section>
+  <h2>Schedule Your Mock Interview Here</h2>
+
+<%= render 'interview_slots/index' %>
+
+
+<%= form_for :interview, url: interviews_path do |f| %>
+    <div id="abc">
+      <!-- Popup Div Starts Here -->
+      <div id="popupContact">
+        <div id="abcform">
+          <!-- Contact Us Form -->
+          <img id="close" src="../../images/close_icon.jpg" onclick ="div_hide()">
+          <h2 style="background-color: cornflowerblue">Enter Your Information</h2>
+          <hr>
+          <%= f.hidden_field( :interviewField, :id=> 'interviewField') %>
+          <%= f.hidden_field( :interviewTime, :id => 'interviewTime') %>
+          <%= f.hidden_field( :interviewStatus, :id => 'interviewstatus', :value => "Available") %>
+          <%= f.text_field :name, :id => 'first_Name', :placeholder =>'Name'  %>
+          <%= f.text_field :lastName, :id => 'last_Name', :placeholder =>'Last Name' %>
+          <%= f.text_field :email, :id => 'email', :placeholder =>'Email' %>
+          <%= f.text_field :phoneNumber, :id => 'phoneNumber',:placeholder =>'Phone Number'  %>
+          <%= f.text_area :message, :id => 'message', :placeholder =>'Tell us about You!'  %>
+          <%= f.hidden_field( :interviewID_id, :id=> 'interviewID_id') %>
+
+
+
+          <%= fields_for :interview_slot do |i| %>
+              <%= i.hidden_field( :interviewField, :id=> 'interviewField') %>
+              <%= i.hidden_field( :interview_id, :id=> 'interview_id') %>
+              <%= i.hidden_field( :nineAM, :id=> 'nineAM', :value => "Available") %>
+              <%= i.hidden_field( :nine30AM, :id=> 'nine30AM', :value => "Available") %>
+              <%= i.hidden_field( :tenAM, :id=> 'tenAM', :value => "Available") %>
+              <%= i.hidden_field( :ten30AM, :id=> 'ten30AM', :value => "Available") %>
+              <%= i.hidden_field( :elevenAM, :id=> 'elevenAM', :value => "Available") %>
+              <%= i.hidden_field( :eleven30AM, :id=> 'eleven30AM', :value => "Available") %>
+              <%= i.hidden_field( :NOON, :id=> 'NOON', :value => "Available") %>
+              <%= i.hidden_field( :twelve30PM, :id=> 'twelve30PM', :value => "Available") %>
+              <%= i.hidden_field( :onePM, :id=> ':onePM', :value => "Available") %>
+          <% end %>
+
+
+          <%= f.submit  :id=> 'cmdsend', :onclick => "alert('the value of interviewField ' + #(:interviewField))" %>
+
+        </div></div>
+      <!-- Popup Div Ends Here -->
+    </div>
+
+<% end %>
+<input id="bookedr" type="hidden" value="">
+<input id="bookedc" type="hidden" value="">
+
+<p>This free service is open to anyone looking to sharpen
+  their interviewing skills. Employees of careerbuilder
+  will conduct mock interviews and provide helpful feedback.
+  Each mock interview will take 15 minutes and
+  each participant is allowed two interviews. Space is
+  limited to the first 100 participants. Sign up and
+  upload your resume on the right:</p>
+
+<p>This free service is open to anyone looking to sharpen
+  their interviewing skills. Employees of careerbuilder
+  will conduct mock interviews and provide helpful feedback.
+  Each mock interview will take 15 minutes and
+  each participant is allowed two interviews. Space is
+  limited to the first 100 participants. Sign up and
+  upload your resume on the right:</p>
+
+<br>
+<br>
+<address>
+  <strong>For More Information Email</strong><br>
+  <a href="mailto:#">cbmid@careerbuilder.com</a>
+</address>
+
+</section>
+</html>
