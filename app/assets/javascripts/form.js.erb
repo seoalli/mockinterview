@@ -1,0 +1,143 @@
+$(document).ready(function(){
+    $('.Status').mouseenter(function(){
+        $('.Status').css('cursor', 'pointer' );
+    });
+    $(".Status").click(function() {
+        $("#bookedc").val($(this).index());
+        $("#bookedr").val($(this).parent().index());
+        if ($(this).text()=="Booked"){
+            alert("This slot is already Booked");
+        }
+        else {
+            div_show();
+        }
+
+    });
+    $('#cmdsend').click(function(event){
+
+        var xcell =   $("#bookedc").val();
+        var xcolumn = $("#bookedr").val();
+        var time = $('#scheduler tr:eq(0) td:eq('+xcell+')').text();
+        var department = $('#scheduler tr:eq('+xcolumn+') td:eq(0)').text();
+        var blocked = "Blocked";
+        var available= "Available";
+        var compdepartment;
+        //var rowindex = $("#bookedr").val($(this).parent().index());
+
+        alert("value of name "+ $('#first_Name').val() + " val of last name " + $('#last_Name').val() + " value of row "
+        + xcolumn );
+
+        if (document.getElementById('first_Name').value == "" || document.getElementById('last_Name').value == "" ||
+            document.getElementById('email').value == "" || document.getElementById('phoneNumber').value == "" ||
+            document.getElementById('message').value == "") {
+            alert("You Must Fill All Fields !");
+            event.preventDefault();
+
+        } else {
+
+            var ans = confirm( "Hello " + $("#first_Name").val() + ", you have set a mock interview with " +
+            department + " at "+ time + '\n\n' + " Is this your correct choice?" );
+
+            if (ans == true){
+                $('#scheduler tr:eq('+xcolumn+') td:eq('+xcell+')').css('background-color','#FF0000');
+                $('#scheduler tr:eq('+xcolumn+') td:eq('+xcell+')').html('Booked');
+
+                $('#interviewstatus').val(blocked);
+                $('#interviewField').val(department);
+                $('#interviewTime').val(time);
+
+                updateInterSlot( time, xcolumn );
+
+
+
+                alert ("your interview is confirmed!");
+                //alert ("this block is now: "+ $('#interviewstatus').val());
+                alert ("value of interview time " + time +" "+" the value of interview field: " + department+ " "+$('#interviewTime').val()  );
+            }else{
+                alert( "You have cancelled your interview!");
+                $('input[type=text], textarea ').each(function(){
+                 $(this).val('');
+                });
+               $("#interviewstatus").val(available);
+                event.preventDefault();
+
+            }
+            $('#abc').hide();
+           // $('input[type=text], textarea').each(function(){
+             //   $(this).val('');
+            //});
+        }
+
+
+    });
+
+});
+
+
+//Function To Display Popup
+function div_show() {
+   document.getElementById('abc').style.display = "block";
+}
+//Function to Hide Popup
+function div_hide() {
+    document.getElementById('abc').style.display = "none";
+}
+//Function To update interview_slot
+function updateInterSlot( time, xcolumn ){
+    <% @interview_slots = InterviewSlot.all %>
+        <% @interview_slots.each  do |slot| %>
+            //alert("before the switch, the value of row= "+ xcolumn +" and the value of slotid "+ '<%= slot.id %>' )
+            if ( '<%= slot.id %>' == xcolumn ){
+                alert("inside the switch, the value of slot_id inside the if  " +  '<%= slot.id %>' + "value of time "+ time);
+                switch(time){
+                    case "9:00 AM":
+                        alert("inside the 9am "+ time );
+                    <% slot.update(:nineAM =>'Booked')%>
+                    <% slot.save %>
+                        alert("new value of nineAM "+ '<%= slot.nineAM %>');
+                        break;
+                    case "9:30 AM":
+                    <%  slot.update(:nine30AM =>'Booked')%>
+                    <% slot.save %>
+                        alert("new value of nine30AM "+ '<%= slot.nine30AM %>');
+                        break;
+                    case "10:00 AM":
+                    <% slot.update(:tenAM =>'Booked')%>
+                        alert("new value of tenAM "+ '<%= slot.nine30AM %>');
+                    <% slot.save %>
+                        break;
+                    case "10:30 AM":
+                        alert("inside the 9am "+ time );
+                    <%  slot.update(:ten30AM =>'Booked')%>
+                    <% slot.save %>
+                        break;
+                    case "11:00 AM":
+                    <%  slot.update(:elevenAM =>'Booked')%>
+                    <% slot.save %>
+                        break;
+                    case "11:30 AM":
+                    <%  slot.update(:eleven30AM =>'Booked')%>
+                    <% slot.save %>
+                        break;
+                    case "12:00 Noon":
+                        alert("inside the 9am "+ time );
+                    <%  slot.update(:NOON =>'Booked')%>
+                    <% slot.save %>
+                        break;
+                    case "12:30 PM":
+                    <%  slot.update(:twelve30PM =>'Booked')%>
+                    <% slot.save %>
+                        break;
+                    case "1:00 PM":
+                    <%  slot.update(:onePM =>'Booked')%>
+                    <% slot.save %>
+                        break;
+
+                }
+                alert("done with switch new value of nine30AM "+ '<%= slot.nine30AM %>');
+
+
+            }
+        <% end %>
+
+}

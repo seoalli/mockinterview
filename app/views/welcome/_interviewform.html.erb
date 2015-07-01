@@ -1,0 +1,37 @@
+
+<script type='text/javascript' src="form.js.erb"></script>
+
+<!html>
+
+<%= form_for :interview do |f| %>
+    <div id="abc">
+
+  <!-- Popup Div Starts Here -->
+  <div id="popupContact">
+    <div id="abcform">
+      <!-- Contact Us Form -->
+      <img id="close" src="../../images/close_icon.jpg" onclick ="div_hide()">
+      <h2>Enter Your Information</h2>
+      <hr>
+
+      <input id="name" name="name" placeholder="Name" type="text">
+      <input id="lastName" name="lastName" placeholder="Last Name" type="text">
+      <input id="email" name="email" placeholder="Email" type="text">
+      <input id="phoneNumber" name="phoneNumber" placeholder="phone Number" type="text">
+      <textarea id="msg" name="message" placeholder="Tell Us About You!"></textarea>
+      <a href="#" id="cmdsend">Send</a>
+    </div></div>
+  <!-- Popup Div Ends Here -->
+</div>
+
+<input id="bookedr" type="hidden" value="">
+<input id="bookedc" type="hidden" value="">
+<textarea id="myText">
+  Welcome to Careerbuilder's Mock Interview Day! </br>
+  Your mock interview is set for :
+</textarea>
+
+
+
+<% end %>
+</html>

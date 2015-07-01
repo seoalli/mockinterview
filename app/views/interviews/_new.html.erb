@@ -1,0 +1,184 @@
+<!--<script type='text/javascript' src="form.js.erb"></script>-->
+
+<!html>
+<!--
+<table id="scheduler">
+  <tr class="tableheader">
+    <td style="text-align: left">Job Opening Type </td>
+    <td>9:00 AM</td>
+    <td>9:30 AM</td>
+    <td>10:00 AM</td>
+    <td>10:30 AM</td>
+    <td>11:00 AM</td>
+    <td>11:30 AM</td>
+    <td>12:00 Noon</td>
+    <td>12:30 PM</td>
+    <td>1:00 PM</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">Sales</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">Sales</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">Technology</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">Technology</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">General</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">General</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">General</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">General</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">General</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+  <tr>
+    <td class="JobCategory">General</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+    <td class="Status">Available</td>
+  </tr>
+
+</table>
+-->
+<%= render 'layouts/openslots' %>
+
+
+<%= form_for :interview, url: interviews_path do |f| %>
+    <div id="abc">
+      <!-- Popup Div Starts Here -->
+      <div id="popupContact">
+        <div id="abcform">
+          <!-- Contact Us Form -->
+          <img id="close" src="../../images/close_icon.jpg" onclick ="div_hide()">
+          <h2 style="background-color: cornflowerblue">Enter Your Information</h2>
+          <hr>
+          <%= f.hidden_field( :interviewField, :id=> 'interviewField') %>
+          <%= f.hidden_field( :interviewTime, :id => 'interviewTime') %>
+          <%= f.hidden_field( :interviewStatus, :id => 'interviewstatus', :value => "Available") %>
+          <%= f.text_field :name, :id => 'first_Name', :placeholder =>'Name'  %>
+          <%= f.text_field :lastName, :id => 'last_Name', :placeholder =>'Last Name' %>
+          <%= f.text_field :email, :id => 'email', :placeholder =>'Email' %>
+          <%= f.text_field :phoneNumber, :id => 'phoneNumber',:placeholder =>'Phone Number'  %>
+          <%= f.text_area :message, :id => 'message', :placeholder =>'Tell us about You!'  %>
+          <%= f.fields_for :interview_slots do |slot| %>
+            <% slot.update(:ten30AM, 'Booked')  %>
+              <% slot.save %>
+          <% end %>
+
+
+          <%= f.submit  :id=> 'cmdsend', :onclick => "alert('the value of interviewField ' + #(:interviewField))" %>
+          <!-- <input id="name" name="name" placeholder="Name" type="text">
+           <input id="lastName" name="lastName" placeholder="Last Name" type="text">
+           <input id="email" name="email" placeholder="Email" type="text">
+           <input id="phoneNumber" name="phoneNumber" placeholder="phone Number" type="text">
+           <textarea id="msg" name="message" placeholder="Tell Us About You!"></textarea>
+           <a href="#" id="cmdsend">Send</a> -->
+        </div></div>
+      <!-- Popup Div Ends Here -->
+    </div>
+
+<% end %>
+<input id="bookedr" type="hidden" value="">
+<input id="bookedc" type="hidden" value="">
+
+
+
+</html>

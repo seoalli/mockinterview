@@ -1,0 +1,39 @@
+<script type='text/javascript' src="form.js.erb"></script>
+
+<!html>
+<head>
+
+  <link href="popupform.css" rel="stylesheet">
+</head>
+<body>
+<table id="scheduler">
+  <tr class="tableheader">
+    <td style="text-align: left">Job Opening Type </td>
+    <td>9:00 AM</td>
+    <td>9:30 AM</td>
+    <td>10:00 AM</td>
+    <td>10:30 AM</td>
+    <td>11:00 AM</td>
+    <td>11:30 AM</td>
+    <td>12:00 Noon</td>
+    <td>12:30 PM</td>
+    <td>1:00 PM</td>
+  </tr>
+  <%= @interview_slot.each  do |slot| %>
+      <tr>
+        <td class="JobCategory"> <%= slot.jobType  %> </td>
+        <td class="Status"> <%= slot.nineAM   %> </td>
+        <td class="Status"> <%= slot.nine30AM %> </td>
+        <td class="Status"> <%= slot.tenAM    %> </td>
+        <td class="Status"> <%= slot.ten30AM  %> </td>
+        <td class="Status"> <%= slot.elevenAM %> </td>
+        <td class="Status"> <%= slot.eleven30AM %> </td>
+        <td class="Status"> <%= slot.NOON     %> </td>
+        <td class="Status"> <%= slot.twelve30PM %> </td>
+        <td class="Status"> <%= slot.onePM %> </td>
+
+      </tr>
+  <% end %>
+</table>
+</body>
+</html>
