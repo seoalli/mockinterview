@@ -5,3 +5,47 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+sales1 = InterviewSlot.create( jobType: 'Sales', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                               ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                               twelve30PM: 'Available', onePM: 'Available')
+
+sales2 = InterviewSlot.create( jobType: 'Sales', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                               ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                               twelve30PM: 'Available', onePM: 'Available')
+
+technology1 = InterviewSlot.create( jobType: 'Technology', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                               ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                               twelve30PM: 'Available', onePM: 'Available')
+
+technology2 = InterviewSlot.create( jobType: 'Technology', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                                    ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                                    twelve30PM: 'Available', onePM: 'Available')
+
+general1 = InterviewSlot.create( jobType: 'General', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                                    ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                                    twelve30PM: 'Available', onePM: 'Available')
+
+general2 = InterviewSlot.create( jobType: 'General', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                                 ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                                 twelve30PM: 'Available', onePM: 'Available')
+
+general3 = InterviewSlot.create( jobType: 'General', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                                 ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                                 twelve30PM: 'Available', onePM: 'Available')
+
+general4 = InterviewSlot.create( jobType: 'General', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                                 ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                                 twelve30PM: 'Available', onePM: 'Available')
+
+general5 = InterviewSlot.create( jobType: 'General', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                                 ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                                 twelve30PM: 'Available', onePM: 'Available')
+
+general6 = InterviewSlot.create( jobType: 'General', nineAM: 'Available', nine30AM: 'Available', tenAM: 'Available',
+                                 ten30AM: 'Available', elevenAM: 'Available', eleven30AM: 'Available', NOON: 'Available',
+                                 twelve30PM: 'Available', onePM: 'Available')
+
+
+

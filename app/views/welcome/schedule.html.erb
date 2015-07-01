@@ -1,48 +1,46 @@
 <html>
+
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type='text/javascript' src="form.js.erb"></script>
+  <link href="../stylesheets/popupform.css" rel="stylesheet">
 <style>
-section {
+/*section {
     width:100%;
     float:left;
     padding:70px;   
     font-size: 20px 
-}
-button {
+}*/
+/*button {
    background-color: #FF3300;   
    color:white;
-}
-aside {
+}*/
+/*aside {
     width:40%;
     float:right;
     padding:70px; 
     font-size: 20px   
-}
-footer {
+}*/
+/*footer {
     background-color:#1F1F99;
     color:white;
     clear:both;
     text-align:center;
     padding:5px;     
-}
-    </style>
+}*/
+</style>
 <div>
     <div id="header">
 <h4>Next Mock Interview Day:  September 15, 2015</h4>
 </div>
-  <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Daya", width: 1400, height: 200)%>
-
+<%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Daya", class:"respimg")%>
 <body>
 <section>
 <h2>Schedule Your Mock Interview Here</h2>
 
 <br>
-
-<%=image_tag("schedulermock.jpg", alt: "CareerBuilder Mock Interview Day", width: 1200, height: 260)%>
-
+  <%= render 'interviews/new' %>
 <br>
-<br>
-<br>
-
 <p>This free service is open to anyone looking to sharpen
 their interviewing skills. Employees of careerbuilder
 will conduct mock interviews and provide helpful feedback.
@@ -69,5 +67,3 @@ upload your resume on the right:</p>
 
 
 </body>
-
-
