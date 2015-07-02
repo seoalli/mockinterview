@@ -38,8 +38,8 @@ $(document).ready(function(){
         + xcolumn );
 
         if (document.getElementById('first_Name').value == "" || document.getElementById('last_Name').value == "" ||
-            document.getElementById('email').value == "" || document.getElementById('phoneNumber').value == "" ||
-            document.getElementById('message').value == "") {
+                document.getElementById('email').value == "" || document.getElementById('phoneNumber').value == "" ||
+                document.getElementById('message').value == "") {
             alert("You Must Fill All Fields !");
             event.preventDefault();
 
@@ -62,19 +62,19 @@ $(document).ready(function(){
 
                 alert ("your interview is confirmed!");
                 //alert ("this block is now: "+ $('#interviewstatus').val());
-               // alert ("value of interview time " + time +" "+" the value of interview field: " + department+ " "+$('#interviewTime').val()  );
+                // alert ("value of interview time " + time +" "+" the value of interview field: " + department+ " "+$('#interviewTime').val()  );
             }else{
                 alert( "You have cancelled your interview!");
                 $('input[type=text], textarea ').each(function(){
-                 $(this).val('');
+                    $(this).val('');
                 });
-               $("#interviewstatus").val(available);
+                $("#interviewstatus").val(available);
                 event.preventDefault();
 
             }
             $('#abc').hide();
-           // $('input[type=text], textarea').each(function(){
-             //   $(this).val('');
+            // $('input[type=text], textarea').each(function(){
+            //   $(this).val('');
             //});
         }
 
@@ -86,7 +86,7 @@ $(document).ready(function(){
 
 //Function To Display Popup
 function div_show() {
-   document.getElementById('abc').style.display = "block";
+    document.getElementById('abc').style.display = "block";
 }
 //Function to Hide Popup
 function div_hide() {
@@ -94,35 +94,35 @@ function div_hide() {
 }
 //Function To update interview_slot
 function updateInterSlot( time){
-        switch(time){
-            case "9:00 AM":
-                $('#nineAM').val("Booked");
-                break;
-            case "9:30 AM":
-                $('#nine30AM').val("Booked");
-                break;
-            case "10:00 AM":
-                $('#tenAM').val("Booked");
-                break;
-            case "10:30 AM":
-                $('#ten30AM').val("Booked");
-                break;
-            case "11:00 AM":
-                $('#elevenAM').val("Booked");
-                break;
-            case "11:30 AM":
-                $('#eleven30AM').val("Booked");
-                break;
-            case "12:00 Noon":
-                $('#NOON').val("Booked");
-                break;
-            case "12:30 PM":
-                $('#twelve30PM').val("Booked");
-                break;
-            case "1:00 PM":
-                $('#onePM').val("Booked");
-                break;
+    switch(time){
+        case "9:00 AM":
+            $('#nineAM').val("Booked");
+            break;
+        case "9:30 AM":
+            $('#nine30AM').val("Booked");
+            break;
+        case "10:00 AM":
+            $('#tenAM').val("Booked");
+            break;
+        case "10:30 AM":
+            $('#ten30AM').val("Booked");
+            break;
+        case "11:00 AM":
+            $('#elevenAM').val("Booked");
+            break;
+        case "11:30 AM":
+            $('#eleven30AM').val("Booked");
+            break;
+        case "12:00 Noon":
+            $('#NOON').val("Booked");
+            break;
+        case "12:30 PM":
+            $('#twelve30PM').val("Booked");
+            break;
+        case "1:00 PM":
+            $('#onePM').val("Booked");
+            break;
 
-        }
+    }
 
 }

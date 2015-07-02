@@ -13,38 +13,38 @@
 
 ActiveRecord::Schema.define(version: 20150612174224) do
 
-  create_table "interview_slots", force: :cascade do |t|
-    t.string   "jobType"
-    t.string   "nineAM"
-    t.string   "nine30AM"
-    t.string   "tenAM"
-    t.string   "ten30AM"
-    t.string   "elevenAM"
-    t.string   "eleven30AM"
-    t.string   "NOON"
-    t.string   "twelve30PM"
-    t.string   "onePM"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "interview_id"
-  end
+create_table "interview_slots", force: :cascade do |t|
+t.string   "jobType"
+t.string   "nineAM"
+t.string   "nine30AM"
+t.string   "tenAM"
+t.string   "ten30AM"
+t.string   "elevenAM"
+t.string   "eleven30AM"
+t.string   "NOON"
+t.string   "twelve30PM"
+t.string   "onePM"
+t.datetime "created_at",   null: false
+t.datetime "updated_at",   null: false
+t.integer  "interview_id"
+end
 
-  add_index "interview_slots", ["interview_id"], name: "index_interview_slots_on_interview_id"
+add_index "interview_slots", ["interview_id"], name: "index_interview_slots_on_interview_id"
 
-  create_table "interviews", force: :cascade do |t|
-    t.string   "name"
-    t.string   "lastName"
-    t.string   "email"
-    t.string   "phoneNumber"
-    t.string   "interviewTime"
-    t.string   "interviewField"
-    t.text     "message"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "interviewStatus"
-    t.integer  "interviewID_id"
-  end
+create_table "interviews", force: :cascade do |t|
+t.string   "name"
+t.string   "lastName"
+t.string   "email"
+t.string   "phoneNumber"
+t.string   "interviewTime"
+t.string   "interviewField"
+t.text     "message"
+t.datetime "created_at",      null: false
+t.datetime "updated_at",      null: false
+t.string   "interviewStatus"
+t.integer  "interviewID_id"
+end
 
-  add_index "interviews", ["interviewID_id"], name: "index_interviews_on_interviewID_id"
+add_index "interviews", ["interviewID_id"], name: "index_interviews_on_interviewID_id"
 
 end

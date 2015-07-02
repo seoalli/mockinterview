@@ -59,6 +59,6 @@ class InterviewsController < ApplicationController
 
   def interview_slots_parameters
     params.require(:interview_slot).permit(:nineAM, :nine30AM, :tenAM, :ten30AM,
-                                             :elevenAM, :eleven30AM, :NOON, :twelve30PM, :onePM, :interview_id)
+                                           :elevenAM, :eleven30AM, :NOON, :twelve30PM, :onePM, :interview_id)
   end
 end

@@ -13,16 +13,16 @@
     <th>Message</th>
   </tr>
   <%  @interviews.each do |interview| %>
-    <tr>
-      <td><%= link_to( interview.name, edit_interview_path(interview)) %></td>
-      <td><%= interview.lastName %></td>
-      <td><%= interview.email %></td>
-      <td><%= interview.phoneNumber%></td>
-      <td><%= interview.interviewTime%></td>
-      <td><%= interview.interviewField%></td>
-      <td><%= interview.message%></td>
+      <tr>
+        <td><%= link_to( interview.name, edit_interview_path(interview)) %></td>
+        <td><%= interview.lastName %></td>
+        <td><%= interview.email %></td>
+        <td><%= interview.phoneNumber%></td>
+        <td><%= interview.interviewTime%></td>
+        <td><%= interview.interviewField%></td>
+        <td><%= interview.message%></td>
 
-    </tr>
+      </tr>
   <%end%>
 </table>
 
