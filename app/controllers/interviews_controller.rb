@@ -31,7 +31,8 @@ class InterviewsController < ApplicationController
     @interview_slot = InterviewSlot.find(interview_slots_parameters[:interview_id])
     @interview_slot.update_attributes(interview_slots_parameters)
 
-    UserMailer.welcome_email(@interview)
+    UserMailer.welcome_email(@interview).deliver
+
 
     redirect_to new_interview_path
   end
