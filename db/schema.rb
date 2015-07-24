@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712024321) do
+ActiveRecord::Schema.define(version: 20150711025256) do
 
   create_table "interview_slots", force: :cascade do |t|
     t.string   "jobType"
@@ -42,9 +42,6 @@ ActiveRecord::Schema.define(version: 20150712024321) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "interviewStatus"
-    t.integer  "interviewID_id"
   end
-
-  add_index "interviews", ["interviewID_id"], name: "index_interviews_on_interviewID_id"
 
 end

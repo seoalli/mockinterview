@@ -34,8 +34,8 @@ $(document).ready(function(){
         //compdepartment;*/
         //var rowindex = $("#bookedr").val($(this).parent().index());
 
-        alert("value of name "+ $('#first_Name').val() + " val of last name " + $('#last_Name').val() + " value of row "
-        + xcolumn );
+       // alert("value of name "+ $('#first_Name').val() + " val of last name " + $('#last_Name').val() + " value of row "
+       // + xcolumn );
 
         if (document.getElementById('first_Name').value == "" || document.getElementById('last_Name').value == "" ||
                 document.getElementById('email').value == "" || document.getElementById('phoneNumber').value == "" ||
@@ -55,7 +55,6 @@ $(document).ready(function(){
                 $('#interviewstatus').val(blocked);
                 $('#interviewField').val(department);
                 $('#interviewTime').val(time);
-                $('#interviewID_id').val(xcolumn);
                 $('#interview_id').val(xcolumn);
 
                 updateInterSlot( time);
