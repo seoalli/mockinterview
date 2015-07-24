@@ -44,4 +44,10 @@ ActiveRecord::Schema.define(version: 20150711025256) do
     t.string   "interviewStatus"
   end
 
+  create_table "user_mailers", force: :cascade do |t|
+    t.string   "ActionMailer"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
 end

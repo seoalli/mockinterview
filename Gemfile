@@ -12,7 +12,8 @@ group :production do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  #gem 'sqlite3'
+  gem 'pg', '0.17.1'
 end
 
 # Use SCSS for stylesheets
