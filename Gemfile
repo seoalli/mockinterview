@@ -7,13 +7,14 @@ gem 'rails', '4.2.0'
 
 
 group :production do
- gem 'pg', '0.17.1'
+#gem 'pg', '0.17.1'
+ gem 'pg'
  gem 'rails_12factor', '0.0.2'
 end
 
 group :development, :test do
   #gem 'sqlite3'
-  gem 'pg', '0.17.1'
+ gem 'pg'
 end
 
 # Use SCSS for stylesheets

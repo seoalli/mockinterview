@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150711025256) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "interview_slots", force: :cascade do |t|
     t.string   "jobType"
     t.string   "nineAM"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150711025256) do
     t.integer  "interview_id"
   end
 
-  add_index "interview_slots", ["interview_id"], name: "index_interview_slots_on_interview_id"
+  add_index "interview_slots", ["interview_id"], name: "index_interview_slots_on_interview_id", using: :btree
 
   create_table "interviews", force: :cascade do |t|
     t.string   "name"
@@ -50,4 +53,5 @@ ActiveRecord::Schema.define(version: 20150711025256) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "interview_slots", "interviews"
 end

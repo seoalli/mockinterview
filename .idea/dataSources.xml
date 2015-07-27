@@ -5,14 +5,14 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:db/development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:postgresql:my_database_development</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails mockinterview: test" uuid="62eff221-2030-4959-8de3-87faf7f4dbaa">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:db/test.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:postgresql:my_database_test</jdbc-url>
       <libraries />
     </data-source>
   </component>
