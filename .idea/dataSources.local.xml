@@ -7,5 +7,8 @@
     <data-source name="Rails mockinterview: test" uuid="62eff221-2030-4959-8de3-87faf7f4dbaa">
       <first-sync>true</first-sync>
     </data-source>
+    <data-source name="Rails mockinterview: production" uuid="3a37aaaf-c681-4783-a5c3-4a96d21420dc">
+      <first-sync>true</first-sync>
+    </data-source>
   </component>
 </project>
