@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'welcome/schedule'
   get 'schedule' => 'interviews#new'
   post 'welcome/schedule' => 'welcome#schedule'
+  post 'interviews/new' => 'interviews#new'
 
   get 'show' => 'interviews#show'
 
