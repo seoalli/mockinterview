@@ -25,4 +25,8 @@ test:
 production:
   <<: *default
   #database: db/production.pg
-  database: my_database_production
+  #database: my_database_production
+  database: d214t1b2iuno78
+  user: dawqxwandgwivy
+  password: UR4jBii8TO24UuU4zRG94M6fQw
+  url: postgres://dawqxwandgwivy:UR4jBii8TO24UuU4zRG94M6fQw@ec2-54-83-55-214.compute-1.amazonaws.com:5432/d214t1b2iuno78
