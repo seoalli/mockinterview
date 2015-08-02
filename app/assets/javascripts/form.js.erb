@@ -15,7 +15,7 @@ $(document).ready(function(){
     });
 
     var xcell;
-    var xcolumn;
+    var xrow;
     var time;
     var department;
     var blocked = "Blocked";
@@ -26,16 +26,16 @@ $(document).ready(function(){
     $('#cmdsend').click(function(event){
 
         xcell =   $("#bookedc").val();
-        xcolumn = $("#bookedr").val();
+        xrow = $("#bookedr").val();
         time = $('#scheduler tr:eq(0) td:eq('+xcell+')').text();
-        department = $('#scheduler tr:eq('+xcolumn+') td:eq(0)').text();
+        department = $('#scheduler tr:eq('+xrow+') td:eq(0)').text();
         blocked = "Blocked";
         available= "Available";
         //compdepartment;*/
         //var rowindex = $("#bookedr").val($(this).parent().index());
 
        // alert("value of name "+ $('#first_Name').val() + " val of last name " + $('#last_Name').val() + " value of row "
-       // + xcolumn );
+       // + xrow);
 
         if (document.getElementById('first_Name').value == "" || document.getElementById('last_Name').value == "" ||
                 document.getElementById('email').value == "" || document.getElementById('phoneNumber').value == "" ||
@@ -49,14 +49,14 @@ $(document).ready(function(){
             department + " at "+ time + '\n\n' + " Is this your correct choice?" );
 
             if (ans == true){
-                //$('#scheduler tr:eq('+xcolumn+') td:eq('+xcell+')').css('background-color','#FF0000');
-                //$('#scheduler tr:eq('+xcolumn+') td:eq('+xcell+')').html('Booked');
+                //$('#scheduler tr:eq('+xrow+') td:eq('+xcell+')').css('background-color','#FF0000');
+                //$('#scheduler tr:eq('+xrow+') td:eq('+xcell+')').html('Booked');
 
                 $('#interviewstatus').val(blocked);
                 $('#interviewField').val(department);
                 $('#interviewTime').val(time);
-                $('#interview_id').val(xcolumn);
-
+                $('#interview_id').val(xrow);
+                alert('value of interview_id '+ $('#interview_id').val());
                 updateInterSlot( time);
 
                 alert ("your interview is confirmed!");

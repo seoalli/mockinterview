@@ -33,9 +33,6 @@
                   <%= f.text_field :phoneNumber, :id => 'phoneNumber',:placeholder =>'Phone Number'  %>
                   <%= f.text_area :message, :id => 'message', :placeholder =>'Tell us about You!'  %>
 
-
-
-
                   <%= fields_for :interview_slot do |i| %>
                       <%= i.hidden_field( :interviewField, :id=> 'interviewField') %>
                       <%= i.hidden_field( :interview_id, :id=> 'interview_id') %>

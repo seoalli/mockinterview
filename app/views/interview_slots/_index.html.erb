@@ -12,7 +12,7 @@
     <td>12:30 PM</td>
     <td>1:00 PM</td>
   </tr>
-  <% @interview_slots = InterviewSlot.all %>
+  <% @interview_slots = InterviewSlot.all.sort_by {|interviewslot| interviewslot.id} %>
   <% @interview_slots.each  do |slot| %>
       <tr>
         <td class="JobCategory"> <%= slot.jobType  %> </td>
