@@ -5,3 +5,48 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+InterviewSlot.create([
+                         {:jobType => 'Sales', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                          :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                          :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'Sales', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'Technology', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'Technology', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'General', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'General', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'General', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'General', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'General', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+
+                          {:jobType => 'General', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
+                           :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
+                           :twelve30PM => 'Available', :onePM => 'Available' },
+                     ])
+
+
+
