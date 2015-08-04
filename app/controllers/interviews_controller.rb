@@ -5,15 +5,17 @@ class InterviewsController < ApplicationController
   attr_accessor( :interview_slots )
 
   def index
+    redirect_to new_interview_path
     @interviews = Interview.all
   end
 
   def show
+    redirect_to new_interview_path
     @interview = Interview.find_by(id: params[:id])
     if @interview.nil?
       @interview = Interview.all
       flash.now[:alert] = "Interview not found"
-      render action: 'index'
+      #render action: 'index'
     end
   end
 
