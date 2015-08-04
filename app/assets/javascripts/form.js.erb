@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('.Status').mouseenter(function(){
         $('.Status').css('cursor', 'pointer' );
     });
-    $(".Status").click(function() {
+    $('.Status').click(function() {
         $("#bookedc").val($(this).index());
         $("#bookedr").val($(this).parent().index());
         if ($(this).text()=="Booked"){
@@ -56,7 +56,10 @@ $(document).ready(function(){
                 $('#interviewField').val(department);
                 $('#interviewTime').val(time);
                 $('#interview_id').val(xrow);
-                alert('value of interview_id '+ $('#interview_id').val());
+
+
+
+                setDisplay( xrow);
                 updateInterSlot( time);
 
                 alert ("your interview is confirmed!");
@@ -91,8 +94,39 @@ function div_show() {
 function div_hide() {
     document.getElementById('abc').style.display = "none";
 }
+//Function to initialize display values
+function setDisplay(xrow)
+{   alert('inside the setDisplay');
+    <% @interview_slots = InterviewSlot.all %>
+    <% @interview_slots.each do |slot| %>
+        if('<%= slot.id %>'=== xrow)  {
+            alert("inside the if " + '<%= slot.id %>');
+            alert("value of eleven " + '<%= slot.elevenAM %>');
+            var nine= '<%= slot.nineAM %>';
+            var nine30= '<%= slot.nine30AM %>';
+            var ten= '<%= slot.tenAM %>';
+            var ten30= '<%= slot.ten30AM %>';
+            var eleven= '<%= slot.elevenAM %>';
+            var eleven30= '<%= slot.eleven30AM %>';
+            var twelve= '<%= slot.NOON %>';
+            var twelve30= '<%= slot.twelve30PM %>';
+            var one= '<%= slot.onePM %>';
+            $('#nineAM').val(nine);
+            $('#nine30AM').val(nine30);
+            $('#tenAM').val(ten);
+            $('#ten30AM').val(ten30);
+            $('#elevenAM').val(eleven);
+            $('#eleven30AM').val(eleven30);
+            $('#NOON').val(twelve);
+            $('#twelve30PM').val(twelve30);
+            $('#onePM').val(one);
+        }
+    <% end %>
+
+}
+
 //Function To update interview_slot
-function updateInterSlot( time){
+function updateInterSlot(time){
     switch(time){
         case "9:00 AM":
             $('#nineAM').val("Booked");

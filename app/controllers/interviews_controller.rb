@@ -33,7 +33,6 @@ class InterviewsController < ApplicationController
 
     UserMailer.welcome_email(@interview).deliver
 
-
     redirect_to new_interview_path
   end
 

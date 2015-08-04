@@ -58,3 +58,5 @@ group :development, :test do
 end
 
 gem 'puma'
+gem 'gon'
+gem 'mail'
