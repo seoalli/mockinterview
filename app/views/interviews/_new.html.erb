@@ -14,7 +14,6 @@
 
         <%= render 'interview_slots/index' %>
 
-
         <%= form_for :interview, url: new_interview_path do |f| %>
             <div id="abc">
               <!-- Popup Div Starts Here -->
@@ -36,19 +35,11 @@
                   <%= fields_for :interview_slot do |i| %>
                       <%= i.hidden_field( :interviewField, :id=> 'interviewField') %>
                       <%= i.hidden_field( :interview_id, :id=> 'interview_id') %>
-                      <%= i.hidden_field( :nineAM, :id=> 'nineAM') %>
-                      <%= i.hidden_field( :nine30AM, :id=> 'nine30AM') %>
-                      <%= i.hidden_field( :tenAM, :id=> 'tenAM') %>
-                      <%= i.hidden_field( :ten30AM, :id=> 'ten30AM') %>
-                      <%= i.hidden_field( :elevenAM, :id=> 'elevenAM') %>
-                      <%= i.hidden_field( :eleven30AM, :id=> 'eleven30AM') %>
-                      <%= i.hidden_field( :NOON, :id=> 'NOON') %>
-                      <%= i.hidden_field( :twelve30PM, :id=> 'twelve30PM') %>
-                      <%= i.hidden_field( :onePM, :id=> 'onePM') %>
+                      <%= i.hidden_field( :interview_time_slot, :id=> 'interviewTimeSlot') %>
                   <% end %>
 
 
-                  <%= f.submit  :id=> 'cmdsend', :onclick => "alert('the value of interviewField ' + #(:interviewField))" %>
+                  <%= f.submit  :id=> 'cmdsend' %>
 
                 </div></div>
               <!-- Popup Div Ends Here -->

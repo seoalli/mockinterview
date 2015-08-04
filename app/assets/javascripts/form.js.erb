@@ -17,10 +17,10 @@ $(document).ready(function(){
     var xcell;
     var xrow;
     var time;
+    var timeID;
     var department;
     var blocked = "Blocked";
     var available= "Available";
-    var compdepartment;
 
 
     $('#cmdsend').click(function(event){
@@ -28,14 +28,11 @@ $(document).ready(function(){
         xcell =   $("#bookedc").val();
         xrow = $("#bookedr").val();
         time = $('#scheduler tr:eq(0) td:eq('+xcell+')').text();
+        timeID = $('#scheduler tr:eq(0) td:eq('+xcell+')').attr('id');
         department = $('#scheduler tr:eq('+xrow+') td:eq(0)').text();
         blocked = "Blocked";
         available= "Available";
-        //compdepartment;*/
-        //var rowindex = $("#bookedr").val($(this).parent().index());
 
-       // alert("value of name "+ $('#first_Name').val() + " val of last name " + $('#last_Name').val() + " value of row "
-       // + xrow);
 
         if (document.getElementById('first_Name').value == "" || document.getElementById('last_Name').value == "" ||
                 document.getElementById('email').value == "" || document.getElementById('phoneNumber').value == "" ||
@@ -49,22 +46,15 @@ $(document).ready(function(){
             department + " at "+ time + '\n\n' + " Is this your correct choice?" );
 
             if (ans == true){
-                //$('#scheduler tr:eq('+xrow+') td:eq('+xcell+')').css('background-color','#FF0000');
-                //$('#scheduler tr:eq('+xrow+') td:eq('+xcell+')').html('Booked');
 
                 $('#interviewstatus').val(blocked);
                 $('#interviewField').val(department);
                 $('#interviewTime').val(time);
+                $('#interviewTimeSlot').val(timeID);
                 $('#interview_id').val(xrow);
 
-
-
-                setDisplay( xrow);
-                updateInterSlot( time);
-
                 alert ("your interview is confirmed!");
-                //alert ("this block is now: "+ $('#interviewstatus').val());
-                // alert ("value of interview time " + time +" "+" the value of interview field: " + department+ " "+$('#interviewTime').val()  );
+
             }else{
                 alert( "You have cancelled your interview!");
                 $('input[type=text], textarea ').each(function(){
@@ -75,9 +65,6 @@ $(document).ready(function(){
 
             }
             $('#abc').hide();
-            // $('input[type=text], textarea').each(function(){
-            //   $(this).val('');
-            //});
         }
 
 
@@ -93,69 +80,4 @@ function div_show() {
 //Function to Hide Popup
 function div_hide() {
     document.getElementById('abc').style.display = "none";
-}
-//Function to initialize display values
-function setDisplay(xrow)
-{   alert('inside the setDisplay');
-    <% @interview_slots = InterviewSlot.all %>
-    <% @interview_slots.each do |slot| %>
-        if('<%= slot.id %>'=== xrow)  {
-            alert("inside the if " + '<%= slot.id %>');
-            alert("value of eleven " + '<%= slot.elevenAM %>');
-            var nine= '<%= slot.nineAM %>';
-            var nine30= '<%= slot.nine30AM %>';
-            var ten= '<%= slot.tenAM %>';
-            var ten30= '<%= slot.ten30AM %>';
-            var eleven= '<%= slot.elevenAM %>';
-            var eleven30= '<%= slot.eleven30AM %>';
-            var twelve= '<%= slot.NOON %>';
-            var twelve30= '<%= slot.twelve30PM %>';
-            var one= '<%= slot.onePM %>';
-            $('#nineAM').val(nine);
-            $('#nine30AM').val(nine30);
-            $('#tenAM').val(ten);
-            $('#ten30AM').val(ten30);
-            $('#elevenAM').val(eleven);
-            $('#eleven30AM').val(eleven30);
-            $('#NOON').val(twelve);
-            $('#twelve30PM').val(twelve30);
-            $('#onePM').val(one);
-        }
-    <% end %>
-
-}
-
-//Function To update interview_slot
-function updateInterSlot(time){
-    switch(time){
-        case "9:00 AM":
-            $('#nineAM').val("Booked");
-            break;
-        case "9:30 AM":
-            $('#nine30AM').val("Booked");
-            break;
-        case "10:00 AM":
-            $('#tenAM').val("Booked");
-            break;
-        case "10:30 AM":
-            $('#ten30AM').val("Booked");
-            break;
-        case "11:00 AM":
-            $('#elevenAM').val("Booked");
-            break;
-        case "11:30 AM":
-            $('#eleven30AM').val("Booked");
-            break;
-        case "12:00 Noon":
-            $('#NOON').val("Booked");
-            break;
-        case "12:30 PM":
-            $('#twelve30PM').val("Booked");
-            break;
-        case "1:00 PM":
-            $('#onePM').val("Booked");
-            break;
-
-    }
-
 }

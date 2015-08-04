@@ -27,13 +27,16 @@ class InterviewsController < ApplicationController
 
   def create
     @interview = Interview.create(interview_parameters)
-
     @interview_slot = InterviewSlot.find(interview_slots_parameters[:interview_id])
-    @interview_slot.update_attributes(interview_slots_parameters)
+    @interview_slot.update_attribute(interview_slots_parameters[:interview_time_slot].to_sym, "Booked")
 
-    UserMailer.welcome_email(@interview).deliver
+    if @interview_slot.save! and @interview.save
+        redirect_to new_interview_path
+        #UserMailer.welcome_email(@interview).deliver
+    else
+      flash.now[:alert] = "Slot has already been Booked!"
+    end
 
-    redirect_to new_interview_path
   end
 
   def update_interview_slot(id, attributes, values)
@@ -58,7 +61,6 @@ class InterviewsController < ApplicationController
   end
 
   def interview_slots_parameters
-    params.require(:interview_slot).permit(:nineAM, :nine30AM, :tenAM, :ten30AM,
-                                           :elevenAM, :eleven30AM, :NOON, :twelve30PM, :onePM, :interview_id)
+    params.require(:interview_slot).permit(:interview_id, :interview_time_slot)
   end
 end
