@@ -1,0 +1,2 @@
+module UserMailerAutosHelper
+end
