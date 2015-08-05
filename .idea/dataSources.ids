@@ -6,4 +6,7 @@
   <data-source name="Rails mockinterview: test" uuid="62eff221-2030-4959-8de3-87faf7f4dbaa">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source name="Rails mockinterview: production" uuid="3a37aaaf-c681-4783-a5c3-4a96d21420dc">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
