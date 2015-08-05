@@ -34,7 +34,7 @@ class InterviewsController < ApplicationController
 
     if @interview_slot.save! and @interview.save
         redirect_to new_interview_path
-        #UserMailer.welcome_email(@interview).deliver
+        UserMailer.welcome_email(@interview).deliver
     else
       flash.now[:alert] = "Slot has already been Booked!"
     end

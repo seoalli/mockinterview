@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_mailer_autos
+
   resources :interviews do
     resources :interview_slots
   end
