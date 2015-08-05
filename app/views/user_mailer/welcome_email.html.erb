@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="../stylesheets/popupform.css" rel="stylesheet">
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
 <h1>Welcome to Careerbuilder's Mock Interview Day, <%= @user.name %></h1>
 <p>
   You have successfully reserved your slot for a mock interview.
-  <ul><h4>Registration time and Department:</h4>
+  <ul class="emailListIteam">Registration time and Department:
     <li><%= @user.interviewTime %></li>
     <li><%= @user.interviewField %></li>
   </ul>
-  <ul><h4>Where to go:</h4>
+  <ul class="emailListIteam">Where to go:
     <li>5550 Peachtree Parkway</li>
     <li>Norcross, GA 30092</li>
   </ul>
-  <ul><h4>What to bring:</h4>
+  <ul class="emailListIteam">What to bring:
     <li>Resume </li>
     <li>Paper and pen for notes</li>
     <li style="font-weight: 700; font-style: italic">You MUST bring identification so security can check you in!</li>
   </ul>
-  <ul><h4>What to wear:</h4>
+  <ul class="emailListIteam">What to wear:
     <li>Dress for success! Act as if this is real interview and suit up accordingly. </li>
   </ul>
-  <ul><h4>Contact information (for questions or cancelations):</h4>
+  <ul class="emailListIteam">Contact information (for questions or cancelations):
     <li>cbmid@careerbuilder.com</li>
   </ul>
 </p>
