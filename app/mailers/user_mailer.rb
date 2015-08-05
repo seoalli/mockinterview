@@ -8,7 +8,7 @@ default :from => 'cbmid@careerbuilder.com'
     #@user.debugger
     @url  = 'http://mockinterview.com'
     #binding.pry
-    mail( :to => @user.email,
+    mail( :to => user.email,
           :subject => 'Welcome to Mock Interview Day')
 
 =begin
