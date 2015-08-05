@@ -6,12 +6,29 @@
 <body>
 <h1>Welcome to Careerbuilder's Mock Interview Day, <%= @user.name %></h1>
 <p>
-  You have successfully reserved your slot for a mock interview with the <%= @user.interviewField %> department </br>
-  to be conducted on August 22, 2015 at <%= @user.interviewTime %>
+  You have successfully reserved your slot for a mock interview.
+  <ul><h4>Registration time and Department:</h4>
+    <li><%= @user.interviewTime %></li>
+    <li><%= @user.interviewField %></li>
+  </ul>
+  <ul><h4>Where to go:</h4>
+    <li>5550 Peachtree Parkway</li>
+    <li>Norcross, GA 30092</li>
+  </ul>
+  <ul><h4>What to bring:</h4>
+    <li>Resume </li>
+    <li>Paper and pen for notes</li>
+    <li style="font-weight: 700; font-style: italic">You MUST bring identification so security can check you in!</li>
+  </ul>
+  <ul><h4>What to wear:</h4>
+    <li>Dress for success! Act as if this is real interview and suit up accordingly. </li>
+  </ul>
+  <ul><h4>Contact information (for questions or cancelations):</h4>
+    <li>cbmid@careerbuilder.com</li>
+  </ul>
 </p>
 <p>Thanks for joining and have a great day!</p>
-<h4>For More Information Email: </br>
-  cbmid@careerbuilder.com</h4>
+
 </body>
 </html>
 
