@@ -218,7 +218,7 @@ section {
     width: 100%;
     /*width: 1400px;*/
 }
-.emailListIteam{
+.emailListIteam li {
     font-weight: 700;
     text-decoration: underline;
 }
