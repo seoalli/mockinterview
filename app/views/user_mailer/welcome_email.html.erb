@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="../stylesheets/popupform.css" rel="stylesheet">
+  <link href="../assets/stylesheets/popupform.css" rel="stylesheet">
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
 <h1>Welcome to Careerbuilder's Mock Interview Day, <%= @user.name %></h1>
 <p>
   You have successfully reserved your slot for a mock interview.
+</p>
+<ul >
+  <li class="emailListIteam"> Registration time and Department:
+    <ul>
+      <li> <%= @user.interviewTime %></li>
+      <li> <%= @user.interviewField %></li>
+    </ul>
+</ul>
 <ul>
-  <li class="emailListIteam">Registration time and Department:
-    <li><%= @user.interviewTime %></li>
-    <li><%= @user.interviewField %></li>
+  <li  class="emailListIteam">Where to go:
+    <ul>
+      <li>5550 Peachtree Parkway</li>
+      <li>Norcross, GA 30092</li>
+    </ul>
   </li>
-  <li class="emailListIteam">Where to go:
-    <li>5550 Peachtree Parkway</li>
-    <li>Norcross, GA 30092</li>
-  </li>
+
+</ul>
+<ul>
   <li class="emailListIteam">What to bring:
-    <li>Resume </li>
-    <li>Paper and pen for notes</li>
-    <li style="font-weight: 700; font-style: italic">You MUST bring identification so security can check you in!</li>
-  </li>
-  <li class="emailListIteam">What to wear:
-    <li>Dress for success! Act as if this is real interview and suit up accordingly. </li>
-  </li>
-  <li class="emailListIteam">Contact information (for questions or cancelations):
-    <li>cbmid@careerbuilder.com</li>
+    <ul>
+      <li>Resume </li>
+      <li>Paper and pen for notes</li>
+      <li style="font-weight: 700; font-style: italic">You MUST bring identification so security can check you in!</li>
+    </ul>
   </li>
 </ul>
-</p>
+<ul>
+  <li class="emailListIteam">What to wear:
+    <ul>
+      <li>Dress for success! Act as if this is real interview and suit up accordingly. </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li class="emailListIteam">Contact information (for questions or cancelations):
+    <ul>
+      <li>cbmid@careerbuilder.com</li>
+    </ul>
+  </li>
+</ul>
+
+
 <p>Thanks for joining and have a great day!</p>
 
 </body>
 </html>
-
