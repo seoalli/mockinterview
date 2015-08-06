@@ -218,10 +218,7 @@ section {
     width: 100%;
     /*width: 1400px;*/
 }
-.emailListIteam li {
-    font-weight: 700;
-    text-decoration: underline;
-}
+
 
 @media screen and (orientation: portrait) {
     img.respimg { max-width: 100%; }
