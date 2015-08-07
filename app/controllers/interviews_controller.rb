@@ -23,27 +23,22 @@ class InterviewsController < ApplicationController
     @interview = Interview.new
   end
 
-  def edit
-    @interview = Interview.find(params[:id])
-  end
-
   def create
     @interview = Interview.create(interview_parameters)
     @interview_slot = InterviewSlot.find(interview_slots_parameters[:interview_id])
-    @interview_slot.update_attribute(interview_slots_parameters[:interview_time_slot].to_sym, "Booked")
+    @interview_slot.update_attributes( interview_slots_parameters[:interview_time_slot].to_sym=> "Booked", interview_slots_parameters[:interviewID].to_sym=> interview_slots_parameters[:interview_id])
 
     if @interview_slot.save! and @interview.save
-        redirect_to new_interview_path
-        UserMailer.welcome_email(@interview).deliver_now
+      redirect_to new_interview_path
+      UserMailer.welcome_email(@interview).deliver_now
     else
       flash.now[:alert] = "Slot has already been Booked!"
     end
 
   end
 
-  def update_interview_slot(id, attributes, values)
-    @interview_slot = InterviewSlot.find(id)
-    @interview_slot.update_attribute(attributes, values)
+  def edit
+    @interview = Interview.find(params[:id])
   end
 
   def update
@@ -54,15 +49,20 @@ class InterviewsController < ApplicationController
   end
 
   def destroy
+    @interview = Interview.find_by(id: params[:id])
+    @interview_slot = InterviewSlot.find(@interview.slotID)
+    @interview_slot.update_attribute(@interview.slotTimeDescription.to_sym, "Available")
+    @interview.destroy
+    redirect_to interview_path
   end
 
   private
   def interview_parameters
     params.require(:interview).permit(:name, :lastName, :email,
-                                      :phoneNumber, :interviewTime, :interviewField, :message, :interviewStatus)
+                                      :phoneNumber, :interviewTime, :interviewField, :message, :interviewStatus, :slotTimeDescription, :slotID)
   end
 
   def interview_slots_parameters
-    params.require(:interview_slot).permit(:interview_id, :interview_time_slot)
+    params.require(:interview_slot).permit(:interview_id, :interview_time_slot, :interviewID)
   end
 end

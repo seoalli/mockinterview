@@ -25,7 +25,9 @@
                   <hr>
                   <%= f.hidden_field( :interviewField, :id=> 'interviewField') %>
                   <%= f.hidden_field( :interviewTime, :id => 'interviewTime') %>
+                  <%= f.hidden_field( :slotTimeDescription, :id=> 'slotTimeDescription') %>
                   <%= f.hidden_field( :interviewStatus, :id => 'interviewstatus', :value => "Available") %>
+                  <%= f.hidden_field( :slotID, :id => 'slotID') %>
                   <%= f.text_field :name, :id => 'first_Name', :placeholder =>'Name'  %>
                   <%= f.text_field :lastName, :id => 'last_Name', :placeholder =>'Last Name' %>
                   <%= f.text_field :email, :id => 'email', :placeholder =>'Email' %>
@@ -33,7 +35,7 @@
                   <%= f.text_area :message, :id => 'message', :placeholder =>'Tell us about You!'  %>
 
                   <%= fields_for :interview_slot do |i| %>
-                      <%= i.hidden_field( :interviewField, :id=> 'interviewField') %>
+                      <%= i.hidden_field( :interviewID, :id=> 'interviewID', :value => "interview_id") %>
                       <%= i.hidden_field( :interview_id, :id=> 'interview_id') %>
                       <%= i.hidden_field( :interview_time_slot, :id=> 'interviewTimeSlot') %>
                   <% end %>
