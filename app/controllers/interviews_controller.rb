@@ -5,7 +5,7 @@ class InterviewsController < ApplicationController
   attr_accessor( :interview_slots )
 
   def index
-    redirect_to new_interview_path
+    #Sredirect_to new_interview_path
     @interviews = Interview.all
   end
 
