@@ -5,17 +5,17 @@ class InterviewsController < ApplicationController
   attr_accessor( :interview_slots )
 
   def index
-    #Sredirect_to new_interview_path
+    raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
     @interviews = Interview.all
   end
 
   def show
-    redirect_to new_interview_path
+    raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
     @interview = Interview.find_by(id: params[:id])
     if @interview.nil?
       @interview = Interview.all
       flash.now[:alert] = "Interview not found"
-      #render action: 'index'
+      redirect_to new_interview_path
     end
   end
 
