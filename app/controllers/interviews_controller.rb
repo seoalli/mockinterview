@@ -49,11 +49,13 @@ class InterviewsController < ApplicationController
   end
 
   def destroy
+=begin
     @interview = Interview.find_by(id: params[:id])
     @interview_slot = InterviewSlot.find(@interview.slotID)
     @interview_slot.update_attribute(@interview.slotTimeDescription.to_sym, "Available")
     @interview.destroy
     redirect_to interview_path
+=end
   end
 
   private
