@@ -47,7 +47,7 @@ class InterviewsController < ApplicationController
     @interview = Interview.find(params[:id])
     @interview.update(interview_parameters)
 
-    redirect_to interviews_path
+    redirect_to interviews_new_path
   end
 
   def destroy
