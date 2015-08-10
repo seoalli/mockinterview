@@ -5,12 +5,12 @@ class InterviewsController < ApplicationController
   attr_accessor( :interview_slots )
 
   def index
-    #raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
+    raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
     @interviews = Interview.all
   end
 
   def show
-    #raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
+    raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
     @interview = Interview.find_by(id: params[:id])
     #binding.pry
     if @interview.nil?
