@@ -12,11 +12,13 @@ class InterviewsController < ApplicationController
   def show
     #raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
     @interview = Interview.find_by(id: params[:id])
+    #binding.pry
     if @interview.nil?
       @interview = Interview.all
       flash.now[:alert] = "Interview not found"
-      redirect_to new_interview_path
+     redirect_to schedule_path
     end
+    redirect_to schedule_path
   end
 
   def new
@@ -29,7 +31,7 @@ class InterviewsController < ApplicationController
     @interview_slot.update_attributes( interview_slots_parameters[:interview_time_slot].to_sym=> "Booked", interview_slots_parameters[:interviewID].to_sym=> interview_slots_parameters[:interview_id])
 
     if @interview_slot.save! and @interview.save
-      redirect_to new_interview_path
+      redirect_to interviews_new_path
       UserMailer.welcome_email(@interview).deliver_now
     else
       flash.now[:alert] = "Slot has already been Booked!"
@@ -49,13 +51,13 @@ class InterviewsController < ApplicationController
   end
 
   def destroy
-begin
+
     @interview = Interview.find_by(id: params[:id])
     @interview_slot = InterviewSlot.find(@interview.slotID)
     @interview_slot.update_attribute(@interview.slotTimeDescription.to_sym, "Available")
     @interview.destroy
-    redirect_to interview_path
-end
+    redirect_to interviews_new_path
+
   end
 
   private

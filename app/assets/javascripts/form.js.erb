@@ -42,9 +42,10 @@ $(document).ready(function(){
 
         } else {
 
-            var ans = confirm( "Hello " + $("#first_Name").val() + ", you have set a mock interview with " +
-            department + " at "+ time + '\n\n' + " Is this your correct choice?" );
+           // var ans = confirm( "Hello " + $("#first_Name").val() + ", you have set a mock interview with " +
+            //department + " at "+ time + '\n\n' + " Is this your correct choice?" );
 
+            ans= true;
             if (ans == true){
 
                 $('#interviewstatus').val(blocked);
@@ -55,7 +56,7 @@ $(document).ready(function(){
                 $('#slotTimeDescription').val(timeID);
                 $('#slotID').val(xrow)
 
-                alert ("your interview is confirmed!");
+                //alert ("your interview is confirmed!");
 
             }else{
                 alert( "You have cancelled your interview!");
