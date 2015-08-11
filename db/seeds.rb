@@ -39,6 +39,7 @@ InterviewSlot.create([
                            :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
                            :twelve30PM => 'Available', :onePM => 'Available' },
 
+=begin
                           {:jobType => 'General', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
                            :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
                            :twelve30PM => 'Available', :onePM => 'Available' },
@@ -46,6 +47,7 @@ InterviewSlot.create([
                           {:jobType => 'General', :nineAM => 'Available', :nine30AM => 'Available', :tenAM => 'Available',
                            :ten30AM => 'Available', :elevenAM => 'Available', :eleven30AM => 'Available', :NOON => 'Available',
                            :twelve30PM => 'Available', :onePM => 'Available' },
+=end
                      ])
 
 
