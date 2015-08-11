@@ -227,6 +227,9 @@ section {
     cursor: pointer;
 }
 
+.body_text, .body_text li{
+    font-size: medium ;
+}
 @media screen and (orientation: portrait) {
     img.respimg { max-width: 100%; }
 }

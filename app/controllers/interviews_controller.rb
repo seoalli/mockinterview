@@ -36,7 +36,6 @@ class InterviewsController < ApplicationController
     else
       flash.now[:alert] = "Slot has already been Booked!"
     end
-
   end
 
   def edit
