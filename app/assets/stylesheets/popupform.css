@@ -221,9 +221,9 @@ section {
     /*width: 1400px;*/
 }
 .close_icon {
-    position: relative;
-    right: -525px;
-    top: 45px;
+    position: inherit;
+    right: 3px;
+    top: 7px;
     cursor: pointer;
 }
 

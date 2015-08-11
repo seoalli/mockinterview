@@ -18,11 +18,10 @@
             <div id="abc">
               <!-- Popup Div Starts Here -->
               <div id="popupContact">
-                <%=image_tag("close_icon.jpg", :onclick =>"div_hide()", :class =>"close_icon" )%>
+
                 <div id="abcform">
                   <!-- Contact Us Form -->
-
-                  <!--<img id="close" src="../../images/close_icon.jpg" onclick ="div_hide()">-->
+                  <%=image_tag("close_icon.jpg", :onclick =>"div_hide()", :class =>"close_icon" )%>
                   <h2 style="background-color: cornflowerblue">Enter Your Information</h2>
                   <hr>
                   <%= f.hidden_field( :interviewField, :id=> 'interviewField') %>
