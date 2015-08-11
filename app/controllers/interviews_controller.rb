@@ -61,8 +61,8 @@ class InterviewsController < ApplicationController
 
   private
   def interview_parameters
-    params.require(:interview).permit(:name, :lastName, :email,
-                                      :phoneNumber, :interviewTime, :interviewField, :message, :interviewStatus, :slotTimeDescription, :slotID)
+    params.require(:interview).permit(:name, :lastName, :email, :phoneNumber, :interviewTime, :interviewField,
+                                      :interviewStatus, :slotTimeDescription, :slotID)
   end
 
   def interview_slots_parameters

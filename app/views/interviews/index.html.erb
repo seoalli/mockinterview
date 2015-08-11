@@ -10,7 +10,6 @@
     <th>Phone Number</th>
     <th>Interview Time</th>
     <th>Interviewing Department</th>
-    <th>Message</th>
   </tr>
   <%  @interviews.each do |interview| %>
       <tr>
@@ -20,7 +19,6 @@
         <td><%= interview.phoneNumber%></td>
         <td><%= interview.interviewTime%></td>
         <td><%= interview.interviewField%></td>
-        <td><%= interview.message%></td>
         <td><%= link_to 'Delete Record', interview_path(interview), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
