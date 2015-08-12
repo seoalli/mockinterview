@@ -228,7 +228,7 @@ section {
     cursor: pointer;
 }
 
-.body_text, .body_text li{
+.body_text, .body_text li, .body_text ul{
     font-size: medium ;
 }
 @media screen and (orientation: portrait) {
