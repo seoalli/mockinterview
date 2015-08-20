@@ -12,7 +12,13 @@
     }
 </style>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% if content_for?(:head) %>
+      <title><%= page_title %></title>
+      <%= yield(:head) %>
+      <meta name="robots" content="index, follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% end %>
+
   <a><%=image_tag("cblogo.jpg", alt: "CareerBuilder Mock Interview Day", width: 250, height: 80)%></a>
   <div class="btn-group pull-right" role="group">
     <a class="btn btn-default" href="/" role="button">Home</a>

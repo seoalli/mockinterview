@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <% content_for :head do %>
+    <% page_heading "Atlanta" %>
+    <meta name="description" content="The Atlanta community is invited to CareerBuilder Mock Interview Day. Participants
+                                    will have the opportunity to practice their interview skills and receive personalized
+                                    feedback from experienced hiring managers." />
+  <% end %>
 <style>
 section {
     width:60%;
     float:left;
     padding:70px;   
-    font-size: 20px 
+    font-size: 20px
 }
 button {
-   background-color: #FF3300;   
+   background-color: #FF3300;
    color:white;
 }
 aside {
     width:40%;
     float:right;
-    padding:70px; 
-    font-size: 20px   
+    padding:70px;
+    font-size: 20px
 }
 footer {
     background-color:#1F1F99;
     color:white;
     clear:both;
     text-align:center;
-    padding:5px;     
+    padding:5px;
 }
     </style>
 
     <div id="header">
 <h4>Next Mock Interview Day: August 22, 2015</h4>
   </div>
-  
+
   <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Day", class:"respimg")%>
   <%=image_tag("mockphotos.jpg", alt: "CareerBuilder Mock Interview Day", class:"respimg")%>
 
@@ -87,7 +93,7 @@ footer {
   and customer care delivered at every touch point, CareerBuilder helps match the right talent with the
   right opportunity more often than any other site.</p>
 <br>
-    
+
 </div>
 </aside>
 

@@ -190,6 +190,7 @@
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.5.1, rbenv: 2.0.0-p481) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.11.0, rbenv: 2.0.0-p481) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="netrc (v0.10.3, rbenv: 2.0.0-p481) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="newrelic_rpm (v3.8.0.218, rbenv: 2.0.0-p481) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.6.2, rbenv: 2.0.0-p481) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.17.1, rbenv: 2.0.0-p481) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.1, rbenv: 2.0.0-p481) [gem]" level="application" />

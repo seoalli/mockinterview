@@ -1,74 +1,78 @@
 <!--<script type='text/javascript' src="form.js.erb"></script>-->
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!html>
-
-<div>
-  <div id="header">
-    <h4>Next Mock Interview Day: August 22, 2015</h4>
-  </div>
-  <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Daya", class:"respimg")%>
+<html>
+    <% content_for :head do %>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <% page_heading "Atlanta / Schedule a Mock Interview" %>
+        <meta name="description" content="Hey Atlanta, come participate in CareerBuilder’s Mock Interview Day.  Space is limited.  Register here." />
+    <% end %>
+    <div>
+      <div id="header">
+        <h4>Next Mock Interview Day: August 22, 2015</h4>
       </div>
-      <section>
-        <h2>Schedule Your Mock Interview Here</h2>
+      <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Daya", class:"respimg")%>
+    </div>
+    <section>
+      <h2>Schedule Your Mock Interview Here</h2>
 
-        <%= render 'interview_slots/index' %>
+      <%= render 'interview_slots/index' %>
 
-        <%= form_for :interview, url: new_interview_path do |f| %>
-            <div id="abc">
-              <!-- Popup Div Starts Here -->
-              <div id="popupContact">
+      <%= form_for :interview, url: new_interview_path do |f| %>
+          <div id="abc">
+            <!-- Popup Div Starts Here -->
+            <div id="popupContact">
 
-                <div id="abcform">
-                  <!-- Contact Us Form -->
-                  <%=image_tag("close_icon.jpg", :onclick =>"div_hide()", :class =>"close_icon" )%>
-                  <h2 style="background-color: cornflowerblue">Enter Your Information</h2>
-                  <hr>
-                  <%= f.hidden_field( :interviewField, :id=> 'interviewField') %>
-                  <%= f.hidden_field( :interviewTime, :id => 'interviewTime') %>
-                  <%= f.hidden_field( :slotTimeDescription, :id=> 'slotTimeDescription') %>
-                  <%= f.hidden_field( :interviewStatus, :id => 'interviewstatus', :value => "Available") %>
-                  <%= f.hidden_field( :slotID, :id => 'slotID') %>
-                  <%= f.text_field :name, :id => 'first_Name', :placeholder =>'Name'  %>
-                  <%= f.text_field :lastName, :id => 'last_Name', :placeholder =>'Last Name' %>
-                  <%= f.text_field :email, :id => 'email', :placeholder =>'Email' %>
-                  <%= f.text_field :phoneNumber, :id => 'phoneNumber',:placeholder =>'Phone Number'  %>
-                  <%#= f.text_area :message, :id => 'message', :placeholder =>'Tell us about You!'  %>
+              <div id="abcform">
+                <!-- Contact Us Form -->
+                <%=image_tag("close_icon.jpg", :onclick =>"div_hide()", :class =>"close_icon" )%>
+                <h2 style="background-color: cornflowerblue">Enter Your Information</h2>
+                <hr>
+                <%= f.hidden_field( :interviewField, :id=> 'interviewField') %>
+                <%= f.hidden_field( :interviewTime, :id => 'interviewTime') %>
+                <%= f.hidden_field( :slotTimeDescription, :id=> 'slotTimeDescription') %>
+                <%= f.hidden_field( :interviewStatus, :id => 'interviewstatus', :value => "Available") %>
+                <%= f.hidden_field( :slotID, :id => 'slotID') %>
+                <%= f.text_field :name, :id => 'first_Name', :placeholder =>'Name'  %>
+                <%= f.text_field :lastName, :id => 'last_Name', :placeholder =>'Last Name' %>
+                <%= f.text_field :email, :id => 'email', :placeholder =>'Email' %>
+                <%= f.text_field :phoneNumber, :id => 'phoneNumber',:placeholder =>'Phone Number'  %>
+                <%#= f.text_area :message, :id => 'message', :placeholder =>'Tell us about You!'  %>
 
-                  <%= fields_for :interview_slot do |i| %>
-                      <%= i.hidden_field( :interviewID, :id=> 'interviewID', :value => "interview_id") %>
-                      <%= i.hidden_field( :interview_id, :id=> 'interview_id') %>
-                      <%= i.hidden_field( :interview_time_slot, :id=> 'interviewTimeSlot') %>
-                  <% end %>
+                <%= fields_for :interview_slot do |i| %>
+                    <%= i.hidden_field( :interviewID, :id=> 'interviewID', :value => "interview_id") %>
+                    <%= i.hidden_field( :interview_id, :id=> 'interview_id') %>
+                    <%= i.hidden_field( :interview_time_slot, :id=> 'interviewTimeSlot') %>
+                <% end %>
 
+                <%= f.submit  :id=> 'cmdsend' %>
 
-                  <%= f.submit  :id=> 'cmdsend' %>
-
-                </div></div>
-              <!-- Popup Div Ends Here -->
+              </div>
             </div>
+            <!-- Popup Div Ends Here -->
+          </div>
 
-        <% end %>
-        <input id="bookedr" type="hidden" value="">
-        <input id="bookedc" type="hidden" value="">
-        </br></br></br>
-        <ul class="body_text"><span style="font-weight: 700; color:#000000">How to Register for a Mock Interview</span>
-            <ul>
-                <li>Click on an available time slot for the type of job opening for which you would like to be interviewed for</li>
-                <li>Fill out the pop-up registration form and click “Submit” once you’re done (Note: You may need to enable
-                    pop-ups on your browser).
-                </li>
-                <li>You will receive a confirmation email within about an hour. The email will confirm your registration time
-                    as well as provide instructions on what to bring, how to dress, etc.</li>
-            </ul>
+      <% end %>
+      <input id="bookedr" type="hidden" value="">
+      <input id="bookedc" type="hidden" value="">
+      </br></br></br>
+      <ul class="body_text"><span style="font-weight: 700; color:#000000">How to Register for a Mock Interview</span>
+        <ul>
+          <li>Click on an available time slot for the type of job opening for which you would like to be interviewed for</li>
+          <li>Fill out the pop-up registration form and click “Submit” once you’re done (Note: You may need to enable
+                        pop-ups on your browser).
+          </li>
+          <li>You will receive a confirmation email within about an hour. The email will confirm your registration time
+              as well as provide instructions on what to bring, how to dress, etc.
+          </li>
         </ul>
+      </ul>
 
-        <br>
-        <br>
-        <address>
-          <strong>For More Information Email</strong><br>
-          <a href="mailto:cbmid@careerbuilder.com">cbmid@careerbuilder.com</a>
-        </address>
+      <br>
+      <br>
+      <address>
+        <strong>For More Information Email</strong><br>
+        <a href="mailto:cbmid@careerbuilder.com">cbmid@careerbuilder.com</a>
+      </address>
 
-      </section>
-      </html>
+    </section>
+</html>

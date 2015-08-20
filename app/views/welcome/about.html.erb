@@ -1,60 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-section {
-    width:100%;
-    float:left;
-    padding:30px;   
-    font-size: 20px 
-}
-button {
-   background-color: #FF3300;   
-   color:white;
-}
-aside {
-    width:40%;
-    float:right;
-    padding:30px; 
-    font-size: 20px   
-}
-footer {
-    background-color:#1F1F99;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:5px;     
-}
+    <head>
+      <% content_for :head do %>
+          <% page_heading "Atlanta / About" %>
+          <meta name="description" content="The Atlanta community is invited to CareerBuilder Mock Interview Day. Participants
+                                        will have the opportunity to practice their interview skills and receive personalized
+                                        feedback from experienced hiring managers." />
+          <meta name="robots" content="index, follow" />
+      <% end %>
 
-    </style>
-  <div>
-    <div id="header">
-<h4>Next Mock Interview Day: August 22, 2015</h4>
-</div>
-  <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Day", class:"respimg")%>
-</head>
-<body>
-<section>
-    <h2>About CareerBuilder</h2>
-<br>
-<p class="body_text">CareerBuilder has the largest online job site in the U.S., but we're more than just a job board. We
-  are the global leader in human capital solutions. Through constant innovation, unparalleled technology,
-  and customer care delivered at every touch point, CareerBuilder helps match the right talent with the
-  right opportunity more often than any other site.
-<br><br>
-  Our mission is to empower employment. We are striving to organize all the world's human capital
-  data and make it meaningful for society.
-</p>
-
-<br>
-<br>
-<address>
-  <strong>For More Information Email</strong><br>
-  <a href="mailto:cbmid@careerbuilder.com">cbmid@careerbuilder.com</a>
-</address>
-</section>
-
-
-</body>
+        <div id="header">
+            <h4>Next Mock Interview Day: August 22, 2015</h4>
+        </div>
+      <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Day", class:"respimg")%>
+    </head>
+    <body>
+        <section>
+          <h2>About CareerBuilder</h2>
+          <br>
+            <p class="body_text">CareerBuilder has the largest online job site in the U.S., but we're more than just a job board. We
+              are the global leader in human capital solutions. Through constant innovation, unparalleled technology,
+              and customer care delivered at every touch point, CareerBuilder helps match the right talent with the
+              right opportunity more often than any other site.
+            <br><br>
+              Our mission is to empower employment. We are striving to organize all the world's human capital
+              data and make it meaningful for society.
+            </p>
+            <br><br>
+          <address>
+            <strong>For More Information Email</strong><br>
+            <a href="mailto:cbmid@careerbuilder.com">cbmid@careerbuilder.com</a>
+          </address>
+        </section>
+    </body>
 
 </html>
