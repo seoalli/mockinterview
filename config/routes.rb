@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :user_mailer_autos
+  resources :user_mailer_autos, :user
 
   resources :interviews do
     resources :interview_slots
@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   post 'interviews/new' => 'interviews#create'
 
   get 'show' => 'interviews#show'
-
+  get 'interview/cancel' => 'interviews#cancel'
+  post 'interview/cancel' => 'interviews#cancel'
   resources :interview_slots
 
   #post 'interview_slots' => 'welcome#schedule'

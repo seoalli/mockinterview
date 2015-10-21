@@ -74,12 +74,16 @@ $(document).ready(function(){
             }
             $('#abc').hide();
         }
-
-
     });
 
 });
 
+$('#cancelForm').click(function(event){
+		event.preventDefault();
+		alert("inisde the cancelform");
+		//alert('the value of email: '+ $('#email').val());
+		$('#canceldialog').show();
+});
 
 //Function To Display Popup
 function div_show() {

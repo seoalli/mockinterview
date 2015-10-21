@@ -1,8 +1,7 @@
 class InterviewsController < ApplicationController
-# POST /interviews
-# POST /interviews.json
 
-  attr_accessor( :interview_slots )
+  attr_accessor(:interview_slots)
+  attr_accessor(:user)
 
   def index
     raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
@@ -12,7 +11,6 @@ class InterviewsController < ApplicationController
   def show
     raise ActionController::RoutingError.new('Not Found') unless params[:password] == "whateveryouwant"
     @interview = Interview.find_by(id: params[:id])
-    #binding.pry
     if @interview.nil?
       @interview = Interview.all
       flash.now[:alert] = "Interview not found"
@@ -36,6 +34,7 @@ class InterviewsController < ApplicationController
     else
       flash.now[:alert] = "Slot has already been Booked!"
     end
+    session.clear
   end
 
   def edit
@@ -59,10 +58,22 @@ class InterviewsController < ApplicationController
 
   end
 
+  def cancel
+    @interview = Interview.find_by(:email=> params[:interview][:email])
+    @interview_slot = InterviewSlot.find(@interview.slotID)
+    @interview_slot.update_attribute(@interview.slotTimeDescription.to_sym, "Available")
+    @interview.destroy
+    redirect_to interviews_new_path
+  end
+
+  def cancelInterview
+    @interview = @interviews.find_by(:email=> params[:interview][:email])
+  end
+
   private
   def interview_parameters
     params.require(:interview).permit(:name, :lastName, :email, :phoneNumber, :interviewTime, :interviewField,
-                                      :interviewStatus, :slotTimeDescription, :slotID)
+                                      :interviewStatus, :slotTimeDescription, :slotID, :cancelEmail)
   end
 
   def interview_slots_parameters

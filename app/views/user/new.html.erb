@@ -1,0 +1,22 @@
+<html>
+<% content_for :head do %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% page_heading "Atlanta / Schedule a Mock Interview" %>
+    <meta name="description" content="Hey Atlanta, come participate in CareerBuilder’s Mock Interview Day.  Space is limited.  Register here." />
+<% end %>
+<div>
+  <div id="header">
+    <h4>Next Mock Interview Day: August 22, 2015</h4>
+  </div>
+  <%=image_tag("mockmasthead.jpg", alt: "CareerBuilder Mock Interview Daya", class:"respimg")%>
+</div>
+
+	<h2>Cancel Your Mock Interview Here</h2>
+	<%= form_for :user, url: new_user_path do |f| %>
+    <%= f.text_field :name, :id => 'first_Name', :placeholder =>'Name'  %>
+    <%= f.text_field :lastName, :id => 'last_Name', :placeholder =>'Last Name' %>
+    <%= f.text_field :email, :id => 'email', :placeholder =>'Email' %>
+    <%= f.text_field :phoneNumber, :id => 'phoneNumber',:placeholder =>'Phone Number'  %>
+    <%= f.submit 'Submit', :id=> 'cancelForm' %>
+  <% end %>
+</html>
