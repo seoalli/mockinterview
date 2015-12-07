@@ -12,4 +12,15 @@ default :from => 'cbmid@careerbuilder.com'
 
   end
 
+  def cancel_email(user)
+	@user = user
+	@url = 'http://mockinterview.com'
+
+	@date = 'August 22nd'
+
+	mail( :to => user.email,
+		  :subject => "Mock Interview Day Cancellation")
+
+  end
+
 end

@@ -62,6 +62,7 @@ class InterviewsController < ApplicationController
     @interview = Interview.find_by(:email=> params[:interview][:email])
     @interview_slot = InterviewSlot.find(@interview.slotID)
     @interview_slot.update_attribute(@interview.slotTimeDescription.to_sym, "Available")
+    UserMailer.cancel_email(@interview).deliver_now
     @interview.destroy
     redirect_to interviews_new_path
   end
