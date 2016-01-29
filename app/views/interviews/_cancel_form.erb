@@ -1,0 +1,18 @@
+<%= form_for :interview, url: cancel_interview_path do |f| %>
+  <div id="cancelFormWrapper">
+    <!-- Popup Div Starts Here -->
+    <div id="popupCancelForm">
+      <div id="cancelform">
+        <!-- Contact Us Form -->
+        <%=image_tag("close_icon.jpg", :onclick =>"div_hide()", :class =>"close_icon" )%>
+        <h2 style="background-color: cornflowerblue">Enter Your Email Below.</h2>
+        <hr>
+        <%= f.text_field :email, :id => 'email', :placeholder =>'Email' %>
+        <%= f.submit  :id=> 'cancelFormSubmit' %>
+
+      </div>
+    </div>
+    <!-- Popup Div Ends Here -->
+  </div>
+
+<% end %>
