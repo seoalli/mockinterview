@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="../stylesheets/popupform.css" rel="stylesheet">
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h3>Welcome to CareerBuilder's Mock Interview Day, <%= @user.name %></h3>
+<p>
+ Congratulations! You have successfully reserved your slot for a mock interview. Here is what you need to know:
+</p>
+<ul >
+  <li><span style="font-weight: 700; text-decoration: underline" > Registration time and Mock job type </span>
+    <ul>
+      <li> Saturday, August 22, 2015
+            <ul>
+              <li><%= @user.interviewTime %>
+                <ul>
+                  <li>Please arrive 10 minutes in advance </li>
+                  <li>The interview should last about 30 minutes.  15 minutes for the interview and 15 minutes
+                    for critique and feedback.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+      </li>
+      <li> Job Type: <%= @user.interviewField %> Track</li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li><span style="font-weight: 700; text-decoration: underline" >Where to go: </span>
+    <ul>
+      <li>CareerBuilder</li>
+      <li>5550 Peachtree Parkway</li>
+      <li>Norcross, GA 30092</li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li><span style="font-weight: 700; text-decoration: underline" > What to bring: </span>
+    <ul>
+      <li>Resume </li>
+      <li>Cover Letter</li>
+      <li>Paper and pen for notes</li>
+      <li style="font-weight: 700; font-style: italic" >You MUST bring identification so security can check you in!</li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li><span style="font-weight: 700; text-decoration: underline" > What to wear: </span>
+    <ul>
+      <li>Dress for success! Treat this as you would a real interview and dress accordingly. . </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li> <span style="font-weight: 700; text-decoration: underline" >Contact information (For cancellations and questions):</span>
+    <ul>
+      <li>Email: cbmid@careerbuilder.com</li>
+    </ul>
+  </li>
+</ul>
+
+
+<p>See you on Saturday, August 22nd!</p>
+
+</body>
+</html>

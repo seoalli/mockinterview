@@ -1,0 +1,30 @@
+<html>
+<head></head>
+
+<body>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Interview Time</th>
+    <th>Interviewing Department</th>
+  </tr>
+  <%  @interviews.each do |interview| %>
+      <tr>
+        <td><%= link_to( interview.name, edit_interview_path(interview)) %></td>
+        <td><%= interview.lastName %></td>
+        <td><%= interview.email %></td>
+        <td><%= interview.phoneNumber%></td>
+        <td><%= interview.interviewTime%></td>
+        <td><%= interview.interviewField%></td>
+        <td><%= link_to 'Delete Record', interview_path(interview), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+  <%end%>
+</table>
+
+
+</body>
+</html>

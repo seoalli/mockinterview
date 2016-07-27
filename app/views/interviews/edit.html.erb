@@ -1,0 +1,36 @@
+
+<div>
+  <h1> Editing Interviewees </h1>
+  <div class="editBox">
+    <%= form_for :interview, url: interview_path(@interview), method: :patch do |f| %>
+
+    <%= f.label :Name %>
+    <%= f.text_field :name %> <br>
+
+    <%= f.label :LastName %>
+    <%= f.text_field :lastName %> <br>
+
+    <%= f.label :Email %>
+    <%= f.text_field :email %> <br>
+
+    <%= f.label :PhoneNumber %>
+    <%= f.text_field :phoneNumber %> <br>
+
+    <%= f.label :InterviewField %>
+    <%= f.text_field :interviewField %> <br>
+
+    <%= f.label :InterviewTime %>
+    <%= f.text_field :interviewTime %> <br>
+
+    <%= f.label :InterviewStatus %>
+    <%= f.text_field :interviewStatus %> <br>
+    <div class="subbutton">
+      <%= f.submit 'Save Information'%>
+    </div>
+
+    <div class="mainlinks">
+      <%= link_to 'Back to list of interviews', interviews_path %>
+    </div>
+    <% end %>
+  </div>
+</div>

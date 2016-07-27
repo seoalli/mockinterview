@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<%= render 'index' %>
+
+
+<%= form_for :interview_slot, url: interviews_path do |f| %>
+    <div id="abc">
+      <!-- Popup Div Starts Here -->
+      <div id="popupContact">
+        <div id="abcform">
+          <!-- Contact Us Form -->
+          <img id="close" src="../../images/close_icon.jpg" onclick ="div_hide()">
+          <h2 style="background-color: cornflowerblue">Enter Your Information</h2>
+          <hr>
+          <%= fields_for :interview do |i| %>
+              <%= i.hidden_field( :interviewField, :id=> 'interviewField') %>
+              <%= i.hidden_field( :interviewTime, :id => 'interviewTime') %>
+              <%= i.hidden_field( :interviewStatus, :id => 'interviewstatus', :value => "Available") %>
+              <%= i.text_field :name, :id => 'first_Name', :placeholder =>'Name'  %>
+              <%= i.text_field :lastName, :id => 'last_Name', :placeholder =>'Last Name' %>
+              <%= i.text_field :email, :id => 'email', :placeholder =>'Email' %>
+              <%= i.text_field :phoneNumber, :id => 'phoneNumber',:placeholder =>'Phone Number'  %>
+              <%= i.text_area :message, :id => 'message', :placeholder =>'Tell us about You!'  %>
+
+          <% end %>
+
+          <%= f.submit  :id=> 'cmdsend', :onclick => "alert('the value of interviewField ' + #(:interviewField))" %>
+
+        </div></div>
+      <!-- Popup Div Ends Here -->
+    </div>
+
+<% end %>
+<input id="bookedr" type="hidden" value="">
+<input id="bookedc" type="hidden" value="">
+
+
+
+</html>
