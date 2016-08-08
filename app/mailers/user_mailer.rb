@@ -1,6 +1,6 @@
 require 'mail'
 class UserMailer < ActionMailer::Base
-default :from => 'cbmid@careerbuilder.com'
+default :from => 'cbmid@cb.com'
 
   def welcome_email(user)
     @user = user
